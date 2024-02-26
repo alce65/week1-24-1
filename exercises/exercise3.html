@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ejemplo de Web">
+  <title>Coders InfoWeb</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+</head>
+
+<!--
+- Copia el documento HTML con del ejercicio 1 (sample3.html)
+- Añadimos lo necesario para que el documento sea correcto
+- Elimina todo lo que no necesites
+- Conviértelo en una página de un Sitio que incluye un Blog
+- Agrega una sección de encabezado (header) con un encabezado de primer nivel y un menú de navegación
+- Agrega dos secciones (section) con un encabezado de segundo nivel: Entradas del blog y Acerca de
+- Agregamos en una de ella 2 entradas del blog (article) con un encabezado de tercer nivel y párrafos
+- Agregamos en la otra 2 párrafos
+- Agrega una sección de pie de página (footer) con un párrafo
+- Agrega una sección de información complementaria (aside) con un encabezado de tercer nivel y un párrafo
+  -->
+
+<body>
+  <header id="header">
+    <h1>
+      <img src="./favicon.svg" alt="Logo de ISDI-Coders" width="30" height="30" />
+      Coders InfoWeb
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#about">Acerca de</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="blog">
+      <header>
+        <h2>Blog</h2>
+        <nav>
+          <ul>
+            <li><a href="#art1">Artículo 1</a></li>
+            <li><a href="#art2">Artículo 2</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article id="art1">
+        <header>
+          <h3>Programando en JS</h3>
+          <p>Pepe</p>
+        </header>
+
+        <p>First post content</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe asperiores ratione maxime cum accusamus
+          eveniet <strong><a href="...">ES6</a></strong>
+          repellat ex, reiciendis necessitatibus officia ea? Iste alias sunt soluta reiciendis, ab pariatur laboriosam
+          <abbr title="HyperText Markup Language">HTML</abbr>!
+        </p>
+        excepturi!</p>
+        <p>Ejemplo de <strong>JavaScript</strong> <em>bien escrito</em></p>
+        <pre>
+        export const changeTuesday = () => {
+          const now = new Date();
+          const day = now.getDay();
+          console.log(day);
+          if (day === 2) {
+          learnDOM();
+          }
+        };
+      </pre>
+        <p>A nesciunt, minus aut, repellat officiis atque voluptate vero exercitationem maiores explicabo perferendis
+          optio, nisi culpa commodi sint laborum sequi. Laborum consequatur dignissimos inventore odio. Voluptatibus
+          quis
+          possimus neque asperiores?</p>
+        <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+          <p>JavaScript (JS) is a lightweight interpreted (or just-in-time compiled) programming language with
+            first-class
+            functions. </p>
+        </blockquote>
+        <p>Praesentium accusantium necessitatibus accusamus ipsum incidunt dignissimos, animi velit quo deleniti ad
+          molestiae qui error sed, nostrum aperiam rerum neque molestias corporis similique recusandae deserunt,
+          provident
+          doloremque fugiat. Rem, tenetur?</p>
+        <blockquote>
+          <p>This is a book about the JavaScript programming language. It is intended for programmers who, by
+            happenstance or
+            curiosity, are venturing into JavaScript for the first time. It is also intended for programmers who have
+            been
+            working with JavaScript at a novice level and are now ready for a more sophisticated relationship with the
+            language.
+          </p>
+          <footer>
+            <cite>JavaScript: The Good Parts. Douglas Crockford. O'Reilly Media. 2008</cite>
+          </footer>
+        </blockquote>
+        <p>Atque, itaque fugit? Dolorum sequi ea itaque veniam! Dolorum, esse vitae soluta tempore praesentium
+          voluptates
+          accusamus! In repellat minima eligendi, ipsam quaerat tempora. Veritatis exercitationem nostrum animi! Odit,
+          esse deserunt.</p>
+        <p>Nesciunt mollitia nulla consequatur maxime voluptate ut autem animi quae, sapiente architecto corrupti saepe
+          iste delectus quasi itaque a ad quis amet perferendis sed beatae dolorem quia! Vel, atque dolor?</p>
+        <footer>
+          <address>Pepe - ISDI copyrigth 2024</address>
+        </footer>
+      </article>
+      <article id="art2">
+        <header>
+          <h3>Second Post</h3>
+          <p>Ernestina</p>
+        </header>
+        <p>Second post content</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eveniet deleniti veritatis quod omnis?
+          Quae
+          nihil vero labore mollitia nemo, ducimus voluptatum aliquid quasi accusantium, ipsum et iste eaque expedita.
+        </p>
+        <p>Eius, qui ullam sint animi praesentium ipsam in tempora cum a harum. Earum voluptas nam necessitatibus quam
+          rerum incidunt a cupiditate doloremque ducimus sequi quia, debitis eligendi eos asperiores culpa.</p>
+        <p>Odit modi ullam perferendis eligendi cupiditate ratione quisquam, porro dignissimos corporis quae optio
+          mollitia doloribus sint, perspiciatis, aliquam ipsam illum tenetur! Inventore voluptatibus magnam facilis
+          praesentium provident eos ducimus. Similique.</p>
+        <p>Minus, quam? Laboriosam dolorem qui corrupti itaque nemo facilis voluptas dolor non ex consequatur nisi
+          deleniti, explicabo similique, voluptatibus fugiat veritatis necessitatibus iste quasi nesciunt aspernatur
+          aliquam voluptate facere? Eum.</p>
+        <p>Omnis molestias nobis accusamus eaque, temporibus quod quidem vel eius, itaque perferendis natus fuga
+          pariatur
+          obcaecati architecto rem voluptatum unde voluptates minus velit dicta vitae? Eaque delectus repellendus
+          tenetur
+          quae.</p>
+        <p>Id rem deleniti labore est quo amet aliquam quis, corrupti non temporibus reprehenderit consequuntur magni
+          minus iste voluptates? Temporibus praesentium totam accusamus enim itaque expedita molestiae saepe earum
+          consequatur optio!</p>
+        <footer>
+          <address>Ernestina - copyrigth 2024</address>
+        </footer>
+      </article>
+      <aside>
+        <h3>Publicidad</h3>
+        <p>Publicidad de ISDI Coders</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, illum. Magni, expedita fugit. Modi
+          doloremque
+          quo, temporibus nemo eos accusamus unde dignissimos asperiores voluptate? Cupiditate aut dolores id voluptatem
+          quod.
+        </p>
+        <p>Voluptatibus aliquid, dignissimos quibusdam unde quaerat nisi. Cumque ullam consequuntur rem totam omnis
+          iusto
+          molestiae iste qui maiores blanditiis nemo, ut odio pariatur nostrum expedita fugiat possimus illum. Porro,
+          vel!
+        </p>
+        <p>Reprehenderit cupiditate optio nam deserunt. Dolores dolorem fugiat expedita commodi, debitis facere
+          provident
+          illum maiores error saepe quae iusto obcaecati in at sed nostrum sapiente. Omnis est necessitatibus
+          repellendus
+          fugit.</p>
+        <p>Error dolore ex vitae aperiam dolor accusantium voluptatibus quas, in nostrum enim illum exercitationem,
+          repellendus modi ut cumque perspiciatis. Consequatur ratione, explicabo similique repellat expedita sint
+          repudiandae dolorum repellendus ad.</p>
+        <p>Cumque ipsa libero tempora voluptates maxime nemo optio voluptatum, aut sequi quia? Cum saepe temporibus
+          quidem
+          voluptatibus corrupti fugiat commodi esse odit, in fuga. Dolores tempore mollitia provident molestias
+          adipisci.
+        </p>
+      </aside>
+      <a href="#header">Volver al inicio</a>
+    </section>
+    <section id="about">
+      <header>
+        <h2>Acerca de</h2>
+      </header>
+      <p>Información sobre ISDI Coders</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, illum. Magni, expedita fugit. Modi
+        doloremque quo, temporibus nemo eos accusamus unde dignissimos asperiores voluptate? Cupiditate aut dolores id
+        voluptatem quod.</p>
+      <p>Voluptatibus aliquid, dignissimos quibusdam unde quaerat nisi. Cumque ullam consequuntur rem totam omnis iusto
+        molestiae iste qui maiores blanditiis nemo, ut odio pariatur nostrum expedita fugiat possimus illum. Porro, vel!
+      </p>
+      <p>Reprehenderit cupiditate optio nam deserunt. Dolores dolorem fugiat expedita commodi, debitis facere provident
+        illum maiores error saepe quae iusto obcaecati in at sed nostrum sapiente. Omnis est necessitatibus repellendus
+        fugit.</p>
+      <p>Error dolore ex vitae aperiam dolor accusantium voluptatibus quas, in nostrum enim illum exercitationem,
+        repellendus modi ut cumque perspiciatis. Consequatur ratione, explicabo similique repellat expedita sint
+        repudiandae dolorum repellendus ad.</p>
+      <p>Cumque ipsa libero tempora voluptates maxime nemo optio voluptatum, aut sequi quia? Cum saepe temporibus quidem
+        voluptatibus corrupti fugiat commodi esse odit, in fuga. Dolores tempore mollitia provident molestias adipisci.
+      </p>
+      <a href="#header">Volver al inicio</a>
+    </section>
+  </main>
+  <footer>
+    <address>ISDI Coders - 2024</address>
+  </footer>
+</body>
