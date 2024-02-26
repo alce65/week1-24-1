@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ejemplo de Web">
+  <title>Basic Web</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- 
+    - Crear un documento HTML con la estructura básica (sample1.html)
+    - Agregar un comentario    
+    - Agregar un título a la página
+    - Agregar varios párrafo
+    - Agregar un titulo a las listas siguiente
+    - Agregar una lista desordenada con 3 elementos
+    - Agrega una lista desordenada con 3 elementos cada uno con una lista anidada con 3 elementos 
+    - Agrega un título al resto de la página
+    - Agregar alguna imagen con un texto alternativo
+    - Agregar un titulo a la lista siguiente dentro de la sección de imágenes
+    - Agregar una lista ordenada con 3 elementos, que sean enlaces a
+      - Google
+      - Bing
+      - DuckDuckGo
+    - Agregar un párrafo con los mismos enlaces asociados a las imagen de cada buscador
+     -->
+
+  <h1>Ejercicio 1: ejemplo de HTML</h1>
+  <p>Esto es un ejemplo de un párrafo en HTML, para mostrar cómo se ve un párrafo en una página web.
+  </p>
+  <p>
+    Para crear ejemplos se usa el texto de "Lorem Ipsum" que es un texto
+    estándar de la industria. Con Emmet, el comando p*n>lorem genera n
+    párrafos con "Lorem Ipsum".
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+    facere doloribus eligendi numquam quisquam at pariatur officiis dolore sit
+    voluptas corrupti cum, corporis a expedita vitae sint odio ut?
+  </p>
+  <p>
+    Placeat expedita, minima adipisci a consectetur temporibus asperiores quo
+    fugit provident molestiae soluta atque illum, veritatis ullam magni
+    voluptate voluptatum, eum suscipit nisi molestias? Vitae a necessitatibus
+    in iure. Ipsum!
+  </p>
+  <p>
+    Facere amet perferendis reprehenderit est minima a, excepturi et quisquam
+    explicabo, voluptatum aperiam pariatur accusamus neque rerum?
+    Exercitationem minus dolores fuga libero incidunt officiis architecto
+    error, accusamus cumque, provident aperiam.
+  </p>
+  <p>Los saltos de línea son un nuevo párrafo: No se utiliza br</p>
+  <p>Las líneas horizontales suelen ser decoración: no se utiliza hr</p>
+  <h2>Lista desordenada</h2>
+  <p>
+    Con Emmet, el comando ul>li*3>{item$} genera una lista desordenada con 3
+    elementos con el contenido "item1", "item2" y "item3"
+  </p>
+  <ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+  <p>
+    Las listas de elementos ordenados o desordenados solo pueden contener
+    elementos li, incluso cuando se crean listas anidadas
+  </p>
+  <h3>Mascotas</h3>
+  <ul>
+    <li>
+      Perro
+      <ul>
+        <li>Labrador</li>
+        <li>Dogo</li>
+        <li>Beagle</li>
+      </ul>
+    </li>
+    <li>
+      Gato
+      <ul>
+        <li>Siamés</li>
+        <li>Angora</li>
+        <li>Manx</li>
+      </ul>
+    </li>
+    <li>
+      Otros
+      <ul>
+        <li>Pez</li>
+        <li>Canario</li>
+        <li>Hamster</li>
+      </ul>
+    </li>
+  </ul>
+  <h3>Mascotas mal construido</h3>
+  <ul>
+    <li>Perro</li>
+    <ul>
+      <li>Labrador</li>
+      <li>Dogo</li>
+      <li>Beagle</li>
+    </ul>
+    <li>Gato</li>
+    <ul>
+      <li>Siamés</li>
+      <li>Angora</li>
+      <li>Manx</li>
+    </ul>
+    <li>Otros</li>
+    <ul>
+      <li>Pez</li>
+      <li>Canario</li>
+      <li>Hamster</li>
+    </ul>
+  </ul>
+  <h2>Imágenes y enlaces</h2>
+  <p>
+    Las imágenes se insertan con la etiqueta img, que tiene un atributo src
+    con la URL de la imagen y un atributo alt con un texto alternativo
+  </p>
+  <p>
+    Las imágenes se pueden insertar desde un archivo local o desde una URL
+    externa. Si se inserta desde un archivo local, el atributo src debe
+    contener la ruta relativa al archivo. Si se inserta desde una URL externa,
+    el atributo src debe contener la URL completa.
+  </p>
+  <p>
+    El atributo alt es un texto alternativo que se muestra si la imagen no se
+    puede cargar. El texto alternativo también es importante para la
+    accesibilidad, ya que las personas con discapacidad visual pueden usar
+    lectores de pantalla que leen el texto alternativo en lugar de la imagen.
+  </p>
+  <p>
+    Si no se tiene una imagen propia, se puede usar una imagen de ejemplo. En
+    Internet existen sitios web que ofrecen imágenes a mode de ejemplo
+  </p>
+  <ul>
+    <li>Unsplash</li>
+    <li>Lorem Picsum</li>
+    <li>Placehold</li>
+    <li>Pexels</li>
+  </ul>
+
+  <img src="https://source.unsplash.com/random/300×300/?web" alt="Random Web Image" width="300" height="300" />
+  <img src="https://picsum.photos/id/237/300/300" alt="Black puppy Image" width="300" height="300" />
+  <img src="https://placehold.co/300" alt="Image placeholder" width="300" height="300" />
+  <h3>Enlaces en una lista ordenada</h3>
+  <p>
+    Los enlaces se insertan con la etiqueta a, que tiene un atributo href con
+    la URL del enlace y un atributo target con el valor _blank para abrir el
+    enlace en una nueva pestaña
+  </p>
+  <ul>
+    <li>
+      <a href="https://www.google.com" target="_blank">Google</a>
+    </li>
+    <li>
+      <a href="https://www.bing.com" target="_blank">Bing</a>
+    </li>
+    <li>
+      <a href="https://www.duckduckgo.com" target="_blank">DuckDuckGo</a>
+    </li>
+  </ul>
+  <p>Los mismos enlace en forma gráfica</p>
+  <p style="display: flex; align-items: flex-end">
+    <a href="https://www.google.com" target="_blank">
+      <img src="./assets/google-svgrepo-com.svg" title="Google" alt="Google Logo" width="100" height="50" /></a>
+    <span style="font-size: 60px"> | </span>
+    <a href="https://www.bing.com" target="_blank">
+      <img src="./assets/bing-svgrepo-com.svg" title="Bing" alt="Bing Logo" width="100" height="50" /></a>
+    <span style="font-size: 60px"> | </span>
+    <a href="https://www.duckduckgo.com" target="_blank">
+      <img src="./assets/duckduckgo-svgrepo-com.svg" title="DuckDuckGo" alt="DuckDuckGo Logo" width="100"
+        height="50" /></a>
+  </p>
+</body>
+
+</html>
