@@ -57,6 +57,10 @@
     - [Accesibilidad en los elementos HTML](#accesibilidad-en-los-elementos-html)
     - [Ejercicio (5)](#ejercicio-5)
     - [ARIA](#aria)
+  - [Elementos de diseño y maquetación](#elementos-de-diseño-y-maquetación)
+  - [Widgets y componentes](#widgets-y-componentes)
+  - [Estado actual y futuro](#estado-actual-y-futuro)
+  - [Web Components](#web-components)
 
 
 ## Introducción
@@ -918,6 +922,20 @@ El atributo `fetchpriority` con el valor **hight** se usa para definir si la ima
 
 - `svg` - gráficos vectoriales escalables
 
+  - Como imagen
+
+´´´html
+  <img src="imagen.svg" alt="Texto alternativo">
+´´´
+  - Como código
+  
+´´´html
+  <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+  </svg>
+´´
+
+
 ### Audio y video
 
 - `audio` - audio
@@ -1002,7 +1020,7 @@ Aunque es una etiqueta de tipo script, `canvas` (lienzo) da lugar a elementos gr
       <label for="name">Nombre:</label>
       <input type="text" id="name" name="name" required>
       <label>Apellido:
-        <input type="text" id="surname" name="surname" required>
+        <input type="text" name="surname" required>
       </label>
     </fieldset>
     <button type="submit" value="Enviar">
@@ -1294,73 +1312,92 @@ ARIA (Accessible Rich Internet Applications) es una especificación de la W3C qu
 
 Los atributos ARIA se usan para definir el papel (role) de los elementos, el estado (state) de los elementos, las propiedades (property) de los elementos, las relaciones (relationship) entre los elementos, etc.
 
-Los roles de los elementos se usan para definir su papel semántico, como si son botones, enlaces, menús, diálogos, alertas, etc.
+Los roles de los elementos se usan para definir su papel semántico, como si son botones, enlaces, menús, diálogos, alertas, etc. Para representar el rol de los distintos elementos se utiliza el AOM (Accesible Object Model), una representación de la estructura de la página que se usa para la accesibilidad.  Los dispositivos de asistencia, como los lectores de pantalla, usan este árbol de accesibilidad para interpretar y analizar el contenido.
 
 - [ARIA Roles, properties, states](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques)
 
-- Roles
-  - landmark
-  - alert
-  - alertdialog
-  - button
-  - checkbox
-  - dialog
-  - grid
-  - gridcell
-  - link
-  - listbox
-  - menu
-  - menuitem
-  - menuitemcheckbox
-  - menuitemradio
-  - option
-  - progressbar
-  - radio
-  - radiogroup
-  - scrollbar
-  - slider
-  - spinbutton
-  - status
-  - tab
-  - tabpanel
-  - textbox
-  - timer
-  - tooltip
-  - tree
-  - treegrid
-  - treeitem
-  - article
-  - banner
-  - complementary
-  - contentinfo
-  - form
-  - main
-  - navigation
-  - region
-  - search
+- Landmark (punto de referencia) Roles
+  - banner -> header de la página
+  - complementary -> aside con contenido complementario al contenido principal
+  - contentinfo -> footer de la página
+  - form -> formulario
+  - main -> contenido principal de la página (main)
+  - navigation -> menú de navegación (nav)
+  - region -> región de contenido (section )
+  - search -> campo de búsqueda
+
+- Document Structure Roles
+  - article -> article
+  - document -> document
+  - heading -> h1, h2, h3, h4, h5, h6
+  - group -> div, section
+  - list -> ul, ol
+  - directory -> ul, ol
+  - listitem -> li
+  - term -> dt
+  - figure -> figure
+  - img -> img
+  - definition -> dfn
+  - table -> table
+  - row -> tr
+  - cell -> td, th
+  - columnheader -> th
+  - rowgroup -> tbody, thead, tfoot
+  - rowheader -> th
+  - separator -> hr
+  - math -> math
   - application
-  - document
   - feed
-  - marquee
-  - math
+  - none
   - note
   - presentation
   - toolbar
-  - directory
-  - group
-  - heading
-  - img
-  - list
-  - listitem
-  - listitemcheckbox
-  - listitemradio
-  - note
-  - separator
-  - table
-  - row
-  - rowgroup
-  - columnheader
-  - rowheader
+  - tooltip
+
+- Composite Widget Roles
+  - combobox -> input[type="text"] + listbox
+  - menu -> ul, ol
+  - grid -> table
+  - radiogroup -> radiogroup
+  - listbox
+  - menubar
+  - tablist
+  - tree
+  - treegrid
+  
+- Widget Roles
+  - link -> a
+  - menuitem -> li
+  - treeitem -> li
+  - menuitemcheckbox -> li
+  - menuitemradio -> li
+  - gridcell -> td, th
+  - scrollbar -> scrollbar
+  - separator (when focusable) -> hr
+  - textbox -> input, textarea
+  - searchbox -> input[type="search"]
+  - slider -> input[type="range"]
+  - spinbutton -> input[type="number"]
+  - radio -> input[type="radio"]
+  - checkbox -> input[type="checkbox"]
+  - switch -> input[type="checkbox"]
+  - button -> button, input[type="button"], input[type="submit"], input[type="reset"]
+  - option -> option
+  - progressbar -> progress
+  - tab
+  - tabpanel
+
+- Window Roles
+  - alertdialog -> dialog
+  - dialog -> dialog
+
+- Live Region Roles
+  - alert -> alert
+  - marquee -> marquee
+  - log
+  - status
+  - timer
+
 
 Los estados de los elementos se usan para definir su estado semántico, como si están deshabilitados, ocultos, seleccionados, etc.
 
@@ -1402,3 +1439,51 @@ Aria Live Regions
   - polite - se anuncia cuando el usuario no está interactuando
   - assertive - se anuncia inmediatamente
 
+## Elementos de diseño y maquetación
+
+- div, span
+- hr
+- br
+- wbr
+- bdi, bdo
+- rp, rt, rtc
+
+## Widgets y componentes
+
+Elementos de interfaz de usuario que se pueden crear como widgets y componentes de interfaz de usuario, a partir de los elementos de HTML y de los atributos ARIA.
+
+- Tabla de datos (con clasificación, filtrado, etc.)
+- Infinite Scroll
+- Carousel
+- Segmented Button
+- Clasificación por estrellas
+- Acordeón
+- Pestañas
+- Interruptor / Palanca
+- Esqueleto de interfaz de usuario / Marcador de posición de carga
+- Zoom de imagen
+- Menú contextual / Menú del botón derecho del ratón
+
+## Estado actual y futuro
+
+[State of HTML 2023](https://survey.devographics.com/es-ES/survey/state-of-html/2023)
+[Challenges](https://www.codewell.cc/challenges)
+[Challenges](https://www.frontendmentor.io/challenges)
+
+## Web Components
+
+- Web Components
+- Shadow DOM
+- Custom Elements
+- HTML Templates
+- HTML Imports
+
+??
+
+- HTML Modules
+- HTML Decorators
+- HTML Interceptors
+- HTML Extensions
+- HTML Plugins
+- HTML Mixins
+- HTML Fragments

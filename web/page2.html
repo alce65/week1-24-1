@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      document.querySelector('.avatar')
+        .addEventListener('change', (event) => {
+          const outputImg = document.querySelector('.file-output');
+          outputImg.removeAttribute('hidden');
+          outputImg.src = URL.createObjectURL(event.target.files[0]);
+          outputImg.onload = () => URL.revokeObjectURL(outputImg.src); // free memory
+        });
+      document.querySelector('form').addEventListener('submit', (event) => {
+        event.preventDefault()
+        const formData = new FormData(event.target)
+        // let values = {}
+        // for (let i = 1; i < event.target.elements.length - 1; i++) {
+        //   const element = event.target.elements[i];
+        //   values[element.name] = element.value
+        // }
+
+        // console.log('Submit', event.target.elements, values);
+        console.log('Submit', Object.fromEntries(formData));
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <form action="index.html" method="get">
+    <fieldset>
+      <legend>Entrada de texto</legend>
+      <div class="control">
+        <label>
+          <span>Nombre:</span>
+          <input type="text" name="name" required>
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Correo:</span>
+          <input type="email" name="email" required>
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Empresa:</span>
+          <input type="text" name="brand" value="ISDI" readonly>
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Contraseña:</span>
+          <input type="password" name="password" required minlength="5">
+        </label>
+      </div>
+      <div>
+        <label>
+          <span>Avatar</span>
+          <input type="file" name="avatar" class="avatar" required>
+          <img src="" alt="Selected avatar" class="file-output" height="30" hidden>
+        </label>
+
+      </div>
+      <div class="control">
+        <label>
+          <span>Comentarios:</span>
+          <textarea name="comentarios"></textarea>
+        </label>
+      </div>
+    </fieldset>
+    <button type="submit">Enviar</button>
+  </form>
+  <details name="d1" open>
+    <summary>Pregunta 1</summary>
+    <p>Texto de los detalles...</p>
+  </details>
+  <details name="d1">
+    <summary>Pregunta 2</summary>
+    <p>Texto de los detalles...</p>
+  </details>
+
+</body>
+
+</html>

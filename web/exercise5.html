@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Samples learning HTML" />
+    <title>Creando un botón</title>
+
+    <style>
+      .control {
+        margin-bottom: 1rem;
+        p {
+          margin-block: 0.5rem;
+        }
+      }
+      .button-outer {
+        width: 2rem;
+        padding: 2px;
+        border-radius: 10px;
+        background-color: rgb(206, 139, 139);
+        cursor: pointer;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .button-inner {
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          background-color: rgb(108, 29, 29);
+          transition: transform 0.3s;
+          &.active {
+            transform: translateX(1rem);
+          }
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const info = document.querySelector('.button-info');
+        const button = document.querySelector('.button-outer');
+        const inner = document.querySelector('.button-inner');
+
+        onClick = () => {
+          if (button.getAttribute('aria-pressed') === 'false') {
+            button.setAttribute('aria-pressed', 'true');
+            info.textContent = 'Botón activado';
+          } else {
+            button.setAttribute('aria-pressed', 'false');
+            info.textContent = 'Botón desactivado';
+          }
+
+          inner.classList.toggle('active');
+        };
+
+        button.addEventListener('click', onClick);
+
+        button.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            onClick();
+          }
+
+          if (event.key === 'Escape') {
+            button.setAttribute('aria-pressed', 'false');
+            info.textContent = 'Botón desactivado';
+            inner.classList.remove('active');
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Crear un botón 100% accesible sin la etiqueta `button` y sin la etiqueta `a` que se pueda activar con la tecla `Enter` y con la tecla `Espacio` y que se pueda desactivar con la tecla `Escape` y con la tecla `Tab` 
+    
+    1 - Div con la clase `button`
+    2 - Respuesta al evento `click` con JavaScript
+    2 - Atributo `role` con el valor `button`
+    3 - Atributo `tabindex` con el valor `0`
+    4 - Respuesta al evento `key` con JavaScript
+
+    4 - Atributo `aria-pressed` con el valor `false`
+    5 - Atributo `aria-label` con el valor `Botón`
+    6 - Atributo `aria.describedby` con el valor `button ...`
+    -->
+
+    <header>
+      <h1>Creando un botón</h1>
+    </header>
+    <div class="control">
+      <label>
+        Sample input
+        <input type="text" name="sample" />
+      </label>
+    </div>
+    <div class="control">
+      <div
+        class="button-outer"
+        role="button"
+        tabindex="0"
+        aria-label="toggle button"
+        aria-pressed="false"
+        aria-describedby="button that toggle between active and inactive"
+      >
+        <div class="button-inner"></div>
+      </div>
+      <p class="button-info" aria-live="assertive">Botón desactivado</p>
+    </div>
+  </body>
+</html>

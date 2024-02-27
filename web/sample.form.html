@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ejemplo de sitio Web básico" />
+  <meta name="author" content="Alejandro L. Cerezo" />
+  <meta name="creation_date" content="2021-10-01" />
+  <meta name="update_date" content="2021-10-01" />
+  <meta name="license" content="CC BY-NC-SA 4.0" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Web" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme" content="light" />
+  <meta name="lang" content="es" />
+  <title>Basic Web</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+  <script type="module" src="main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document
+        .querySelector('input[type="file"]')
+        .addEventListener('change', (event) => {
+          const output = document.querySelector('.file-output');
+          output.hidden = false;
+          output.src = URL.createObjectURL(event.target.files[0]);
+          output.onload = () => URL.revokeObjectURL(output.src); // free memory
+        });
+
+      document.querySelector('form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        console.log('Formulario enviado', Object.fromEntries(formData));
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- 
+      Formularios
+     -->
+
+  <h1>Ejercicio 1: ejemplo de HTML</h1>
+  <form>
+    <fieldset>
+      <legend>Entrada de texto</legend>
+      <div class="control">
+        <label>
+          <span>Nombre:</span>
+          <input type="text" name="name" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Correo:</span>
+          <input type="email" name="email" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Contraseña:</span>
+          <input type="password" name="password" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Buscar</span>
+          <input type="search" name="q" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>URL:</span>
+          <input type="url" name="url" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Teléfono:</span>
+          <input type="tel" name="tel" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Número:</span>
+          <input type="number" name="number" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Rango:</span>
+          <input type="range" id="range" name="range" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Fecha:</span>
+          <input type="date" name="date" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Hora:</span>
+          <input type="time" name="time" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Fecha y hora:</span>
+          <input type="datetime-local" name="datetime-local" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Mes:</span>
+          <input type="month" name="month" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Semana:</span>
+          <input type="week" name="week" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Color:</span>
+          <input type="color" name="color" />
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Comentarios:</span>
+          <textarea name="comentarios"></textarea>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Entrada de archivos</legend>
+      <div class="control">
+        <label>
+          <span>Archivo:</span>
+          <input type="file" name="file" />
+          <img class="file-output" height="30" alt="Image to upload" hidden />
+        </label>
+      </div>
+      <div>
+        <label>
+          <span>Video from device:</span>
+          <input type="file" name="fileVideo" accept="video/*" capture />
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Entrada de selección</legend>
+      <div class="control">
+        <label>
+          <span>Selección:</span>
+          <select name="select">
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 2</option>
+            <option value="3">Opción 3</option>
+          </select>
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Selección múltiple:</span>
+          <select id="select-multiple" name="select-multiple" multiple>
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 2</option>
+            <option value="3">Opción 3</option>
+          </select>
+        </label>
+      </div>
+      <div class="control">
+        <label>
+          <span>Color (Input con opciones):</span>
+          <input list="datalist" name="datalist" />
+        </label>
+        <datalist id="datalist">
+          <option>Rojo</option>
+          <option>Verde</option>
+        </datalist>
+      </div>
+      <fieldset>
+        <legend>Botón de opción:</legend>
+        <div class="control">
+          <label>
+            <input type="radio" name="radio" value="1" /> Opción 1
+          </label>
+          <label>
+            <input type="radio" name="radio" value="2" /> Opción 2
+          </label>
+          <label>
+            <input type="radio" name="radio" value="3" /> Opción 3
+          </label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Botón de selección:</legend>
+        <div class="control">
+          <label>
+            <input type="checkbox" name="checkbox" value="1" />
+            Opción 1
+          </label>
+          <label>
+            <input type="checkbox" name="checkbox" value="2" />
+            Opción 2
+          </label>
+          <label>
+            <input type="checkbox" name="checkbox" value="3" />
+            Opción 3
+          </label>
+        </div>
+      </fieldset>
+    </fieldset>
+    <fieldset>
+      <legend>Otros elementos</legend>
+      <div class="control">
+        <label>Resultado:
+          <output name="output" value="Value">Valor del resultado</output>
+        </label>
+      </div>
+      <div class="control">
+        <label for="progress">Progreso:</label>
+        <progress id="progress" name="progress" value="50" max="100"></progress>
+      </div>
+      <div class="control">
+        <label for="meter">Medida:</label>
+        <meter id="meter" name="meter" value="50" min="0" max="100"></meter>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Ejemplo de texto editable</legend>
+      <div contenteditable="plaintext-only">
+        <p>Párrafo con texto <strong>editable</strong>...</p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Botones</legend>
+      <button type="submit">Enviar</button>
+      <button type="reset">Limpiar</button>
+      <button type="button">Cancelar</button>
+    </fieldset>
+  </form>
+</body>
+
+</html>

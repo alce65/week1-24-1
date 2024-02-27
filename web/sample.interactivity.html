@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ejemplo de sitio Web básico" />
+    <meta name="author" content="Alejandro L. Cerezo" />
+    <meta name="creation_date" content="2021-10-01" />
+    <meta name="update_date" content="2021-10-01" />
+    <meta name="license" content="CC BY-NC-SA 4.0" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Web" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme" content="light" />
+    <meta name="lang" content="es" />
+    <title>Basic Web</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+    <script type="module" src="main.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const dialog = document.querySelector('dialog');
+        document.querySelector('button.open').addEventListener('click', () => {
+          dialog.showModal();
+        });
+        document.querySelector('button.close').addEventListener('click', () => {
+          dialog.close();
+        });
+      });
+    </script>
+    <style>
+      div {
+        margin: 1rem;
+      }
+      dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      Interactividad
+     -->
+
+    <h1>Ejemplo de interactividad en HTML</h1>
+
+    <div>
+      <h2>Ejemplo de texto editable</h2>
+      <p contenteditable="plaintext-only">
+        Párrafo con texto <strong>editable</strong>...
+      </p>
+    </div>
+    <div>
+      <h2>Details</h2>
+      <details open name="sidebar_panel" class="main_info">
+        <summary>Main info</summary>
+        <!-- controls -->
+        <p>More information ...</p>
+      </details>
+      <details name="sidebar_panel" class="style_settings">
+        <summary>Style</summary>
+        <!-- controls -->
+        <p>Style settings ...</p>
+      </details>
+    </div>
+    <div>
+      <h2>Dialog</h2>
+      <dialog>
+        <p>Dialog content ...</p>
+        <menu>
+          <button class="close" type="submit">OK</button>
+        </menu>
+      </dialog>
+      <button class="open">Open dialog</button>
+    </div>
+    <div>
+      <h2>Progress</h2>
+      <progress value="50" max="100">50%</progress>
+    </div>
+    <div>
+      <h2>Meter</h2>
+      <meter value="0.6" min="0" max="1">60%</meter>
+    </div>
+    <div>
+      <h2>Popover</h2>
+      <button popovertarget="foo">Toggle the popover</button>
+      <div id="foo" popover>Popover content</div>
+  </body>
+</html>
