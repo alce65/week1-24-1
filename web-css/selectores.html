@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    main p {
+      text-decoration: underline;
+    }
+
+    main>p {
+      color: brown;
+    }
+
+    div~p {
+      font-style: italic;
+    }
+
+    div+p {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Selectores</h1>
+  </header>
+  <main>
+    <p>Párrafo X</p>
+    <div>
+      <p>Párrafo 1</p>
+      <p>Párrafo 2</p>
+      <p>Párrafo 3</p>
+      <p>Párrafo 4</p>
+    </div>
+    <p>Párrafo A</p>
+    <p>Párrafo B</p>
+  </main>
+  <p>
+    Fuera de main
+  </p>
+
+</body>
+
+</html>

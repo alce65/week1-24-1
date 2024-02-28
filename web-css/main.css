@@ -1,0 +1,25 @@
+header nav {
+  display: flex;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header {
+  nav {
+    display: flex;
+    ul {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+} */
