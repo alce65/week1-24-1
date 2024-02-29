@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 365px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+main,
+footer {
+  border: 1px solid;
+  padding-inline: 1rem;
+}
+
+header {
+  height: 10vh;
+  padding-inline-start: 1rem; /* Left */
+  padding-inline-end: 1rem; /* Right */
+  padding-block-start: 1rem; /* Top */
+  padding-block-end: 0; /* Bottom*/
+
+  h1,
+  nav {
+    display: inline-block;
+  }
+
+  nav {
+    margin-inline-start: 3rem;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline;
+        a {
+          padding: 0 0.5rem;
+          text-decoration: none;
+          color: inherit;
+          border: 1px solid;
+        }
+      }
+    }
+  }
+
+  /* nav ul {}
+   nav ul li {}
+   nav ul li a {} */
+}
+
+footer {
+  height: 8vh;
+  padding-block-start: 0.5rem; /* Top */
+}
+
+main {
+  min-height: calc(100vh - 18vh);
+  display: flex;
+}
