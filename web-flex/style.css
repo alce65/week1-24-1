@@ -1,3 +1,8 @@
+:root {
+  --primary-color: bisque;
+  --secondary-color: maroon;
+}
+
 * {
   box-sizing: border-box;
   /* font-size: 100%;
@@ -40,8 +45,8 @@ header,
 footer {
   /* border: 1px solid; */
   padding-inline: 1rem;
-  background-color: maroon;
-  color: bisque;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 header {
@@ -60,9 +65,27 @@ header {
     display: none;
   }
 
-  /* nav ul {}
-   nav ul li {}
-   nav ul li a {} */
+  /* nav.mobile-menu {
+    ul {
+      display: none;
+    }
+    a:hover + ul {
+      display: flex;
+      flex-direction: column;
+    }
+  } */
+}
+
+.menu-items {
+  display: none;
+
+  &:target {
+    padding: 1rem;
+    display: initial;
+    position: absolute;
+    top: 0rem;
+    background-color: white;
+  }
 }
 
 footer {
@@ -139,9 +162,26 @@ label {
             text-decoration: none;
             color: inherit;
           }
-          a:hover {
-            background-color: rgb(222, 222, 222);
+          &:hover {
+            & > a {
+              background-color: rgb(222, 222, 222);
+            }
+
+            ul {
+              position: absolute;
+              top: 3rem;
+              display: flex;
+              flex-direction: column;
+              padding-top: 1rem;
+
+              a {
+                background-color: brown;
+              }
+            }
           }
+        }
+        ul {
+          display: none;
         }
       }
     }
