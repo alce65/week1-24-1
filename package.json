@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass web-sass/scss:web-sass/css --watch --no-source-map",
+    "prepare": "husky"
   },
   "keywords": [
     "HTML",
@@ -16,5 +18,9 @@
   "author": "Alejandro Cerezo",
   "prettier": {
     "singleQuote": true
+  },
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "sass": "^1.71.1"
   }
 }
