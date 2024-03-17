@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: bisque;
+}
+
+header h1 {
+  background-color: bisque;
+}
+header:hover {
+  background-color: #ffe9ce;
+}

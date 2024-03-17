@@ -1,0 +1,10 @@
+@use 'var';
+
+header {
+  h1 {
+    background-color: var.$primary-color;
+  }
+  &:hover {
+    background-color: lighten($color: var.$primary-color, $amount: 2);
+  }
+}
